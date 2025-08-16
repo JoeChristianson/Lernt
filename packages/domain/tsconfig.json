@@ -1,0 +1,8 @@
+{
+  "extends": "@lernt/ts-config/node-lib",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"]
+}

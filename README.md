@@ -109,3 +109,9 @@ lernt/
 └─ tooling/
    └─ ci/
       └─ pipeline.yml
+
+## Development
+
+```bash
+pnpm install
+pnpm dev
