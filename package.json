@@ -1,0 +1,24 @@
+{
+  "name": "lernt",
+  "packageManager": "pnpm@9.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "type-check": "turbo run type-check",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:migrate": "tsx packages/services/database/scripts/migrate.ts",
+    "db:seed": "tsx packages/services/database/scripts/seed.ts"
+  },
+  "devDependencies": {
+    "turbo": "2.5.6",
+    "typescript": "^5.6.0",
+    "tsx": "^4.16.0",
+    "pnpm": "^9.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:8.0
+    container_name: lernt-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lernt
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+  mailhog:
+    image: mailhog/mailhog
+    container_name: lernt-mailhog
+    ports:
+      - "8025:8025"
+volumes:
+  db_data:
