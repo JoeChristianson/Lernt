@@ -4,11 +4,13 @@
 
 /* app-level tweaks */
 :root {
-  --bg: 255 255 255;
+	--bg: 255 255 255;
 }
-html, body, #__next {
-  height: 100%;
+html,
+body,
+#__next {
+	height: 100%;
 }
 body {
-  background: rgb(var(--bg));
+	background: rgb(var(--bg));
 }

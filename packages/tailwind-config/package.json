@@ -1,13 +1,11 @@
 {
-  "name": "@lernt/tailwind-config",
-  "version": "0.1.0",
-  "private": true,
-  "type": "commonjs",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "peerDependencies": {
-    "tailwindcss": "^3.4.0"
-  }
+	"name": "@lernt/tailwind-config",
+	"version": "0.1.0",
+	"private": true,
+	"type": "commonjs",
+	"main": "index.js",
+	"files": ["index.js"],
+	"peerDependencies": {
+		"tailwindcss": "^3.4.0"
+	}
 }

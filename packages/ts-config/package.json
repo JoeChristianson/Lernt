@@ -1,18 +1,13 @@
 {
-  "name": "@lernt/ts-config",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "exports": {
-    "./base": "./base.json",
-    "./node-lib": "./node-lib.json",
-    "./next-app": "./next-app.json",
-    "./test": "./test.json"
-  },
-  "files": [
-    "base.json",
-    "node-lib.json",
-    "next-app.json",
-    "test.json"
-  ]
+	"name": "@lernt/ts-config",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		"./base": "./base.json",
+		"./node-lib": "./node-lib.json",
+		"./next-app": "./next-app.json",
+		"./test": "./test.json"
+	},
+	"files": ["base.json", "node-lib.json", "next-app.json", "test.json"]
 }

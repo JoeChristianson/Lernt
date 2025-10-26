@@ -1,24 +1,35 @@
 {
-  "name": "lernt",
-  "packageManager": "pnpm@9.0.0",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "type-check": "turbo run type-check",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "db:migrate": "tsx packages/services/database/scripts/migrate.ts",
-    "db:seed": "tsx packages/services/database/scripts/seed.ts"
-  },
-  "devDependencies": {
-    "turbo": "2.5.6",
-    "typescript": "^5.6.0",
-    "tsx": "^4.16.0",
-    "pnpm": "^9.0.0"
-  }
+	"name": "lernt",
+	"packageManager": "pnpm@9.0.0",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"dev": "turbo run dev --parallel",
+		"dev:web": "pnpm --filter @lernt/web dev",
+		"build": "turbo run build",
+		"type-check": "turbo run type-check",
+		"test": "turbo run test",
+		"lint:check": "biome check .",
+		"lint:fix": "biome check . --write",
+		"lint": "biome lint .",
+		"db:migrate": "turbo run db:migrate",
+		"db:make-migration": "turbo run db:make-migration",
+		"db:seed": "tsx packages/services/database/scripts/seed.ts"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.0",
+		"dotenv-cli": "^10.0.0",
+		"pnpm": "^9.0.0",
+		"tsx": "^4.16.0",
+		"turbo": "2.5.6",
+		"typescript": "^5.6.0"
+	},
+	"overrides": {
+		"@trpc/server": "11.6.0",
+		"@trpc/client": "11.6.0",
+		"@trpc/react-query": "11.6.0"
+	}
 }
