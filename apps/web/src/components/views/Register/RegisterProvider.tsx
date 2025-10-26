@@ -16,15 +16,14 @@ type RegisterContext = {
 export const [useRegisterContext, Provider] = createCtx<RegisterContext>("RegisterProvider");
 
 export const RegisterProvider = ({ children }: { children: React.ReactNode }) => {
-
 	const formContext = useZodForm({
 		schema: formSchema,
 		mode: "onBlur",
 		defaultValues: {
-			email: "john.doe@example.com",
-			password: "johnDoe123!",
-			name: "John Doe",
-			confirmPassword: "johnDoe123!",
+			email: "",
+			password: "",
+			name: "",
+			confirmPassword: "",
 		},
 	});
 	const onSubmit = async (values: FormSchema) => {
