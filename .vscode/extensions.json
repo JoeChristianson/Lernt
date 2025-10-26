@@ -1,12 +1,12 @@
 {
-  "recommendations": [
-    "biomejs.biome",
-    "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss",
-    "formulahendry.auto-rename-tag",
-    "eamodio.gitlens",
-    "mhutchie.git-graph",
-    "firsttris.vscode-jest-runner",
-    "streetsidesoftware.code-spell-checker"
-  ]
+	"recommendations": [
+		"biomejs.biome",
+		"dbaeumer.vscode-eslint",
+		"bradlc.vscode-tailwindcss",
+		"formulahendry.auto-rename-tag",
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
+		"firsttris.vscode-jest-runner",
+		"streetsidesoftware.code-spell-checker"
+	]
 }

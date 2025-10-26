@@ -1,0 +1,33 @@
+{
+	"name": "@lernt/db",
+	"version": "0.1.0",
+	"license": "MIT",
+	"type": "module",
+	"main": "src/index.ts",
+	"scripts": {
+		"with-env": "dotenv -e ../../../.env --",
+		"clean": "rm -rf node_modules .turbo dist",
+		"type-check": "tsc --noEmit",
+		"lint": "biome check .",
+		"lint:fix": "biome check . --write",
+		"db:migrate": "pnpm with-env drizzle-kit push",
+		"db:make-migration": "pnpm with-env drizzle-kit generate",
+		"seed": "tsx ./src/seed.ts"
+	},
+	"dependencies": {
+		"@lernt/domain": "workspace:^",
+		"@lernt/env": "workspace:^",
+		"@lernt/ts-config": "workspace:^",
+		"@lernt/utilities": "workspace:^",
+		"dotenv": "^17.2.2",
+		"drizzle-orm": "^0.44.6",
+		"mysql2": "^3.9.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.0",
+		"@types/node": "^20.14.10",
+		"drizzle-kit": "^0.31.5",
+		"tsx": "^4.7.2",
+		"typescript": "^5.5.4"
+	}
+}

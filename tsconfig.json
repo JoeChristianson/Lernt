@@ -1,16 +1,4 @@
 {
-  "extends": "./packages/ts-config/base.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@lernt/domain/*": ["packages/domain/*"],
-      "@lernt/application/*": ["packages/application/*"],
-      "@lernt/services/*": ["packages/services/*"],
-      "@lernt/ui/*": ["packages/ui/src/*"],
-      "@lernt/utilities/*": ["packages/utilities/*"],
-      "@lernt/tailwind-config": ["packages/tailwind-config"],
-      "@lernt/ts-config": ["packages/ts-config"]
-    }
-  },
-  "include": ["apps", "packages"]
+	"extends": "./packages/ts-config/base.json",
+	"include": ["apps", "packages"]
 }
