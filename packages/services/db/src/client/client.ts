@@ -16,12 +16,22 @@ assertDefinedVariable(user, "DB_USER");
 assertDefinedVariable(password, "DB_PASSWORD");
 assertDefinedVariable(database, "DB_DATABASE");
 
-const connection = mysql.createPool({
+const poolParams = {
 	host,
 	user,
 	password,
 	database,
+	connectionLimit: 10,
+}
+
+console.log("Creating MySQL connection pool with params:", {
+	host,
+	user,
+	database,
+	connectionLimit: poolParams.connectionLimit,
 });
+
+const connection = mysql.createPool(poolParams);
 
 // singleton drizzle instance
 export const db = drizzle(connection, { schema, mode: "default" });

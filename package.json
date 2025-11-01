@@ -15,6 +15,7 @@
 		"lint:check": "biome check .",
 		"lint:fix": "biome check . --write",
 		"lint": "biome lint .",
+		"db:up": "docker-compose up",
 		"db:migrate": "turbo run db:migrate",
 		"db:make-migration": "turbo run db:make-migration",
 		"db:seed": "tsx packages/services/database/scripts/seed.ts"

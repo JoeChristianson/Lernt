@@ -1,4 +1,5 @@
 "use client";
+import "@lernt/ui/globals.css";
 
 import { SessionProvider } from "next-auth/react";
 import type { ReactNode } from "react";

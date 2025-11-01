@@ -1,8 +1,21 @@
+// components/ui/input-error.tsx
+import type * as React from "react";
 import { useFormError } from "../../../hooks";
+import { cn } from "../../../utils/cn";
 
-const InputError = ({ name }: { name: string }) => {
+export type InputErrorProps = {
+	name: string;
+	className?: string;
+};
+
+const InputError: React.FC<InputErrorProps> = ({ name, className }) => {
 	const { errorMessage } = useFormError(name);
-	return errorMessage ? <span>{errorMessage}</span> : null;
+
+	return (
+		<p role="alert" className={cn("mt-1 text-sm text-red-600", className)}>
+			{errorMessage}
+		</p>
+	);
 };
 
 export default InputError;
