@@ -5,9 +5,10 @@ type Args = {
 	defaultMessage?: string;
 };
 
-const useClientErrors = () => {
+const  useClientErrors = () => {
 	const handleErrors = async <T,>(cb: () => Promise<T>, args?: Args): Promise<T | null> => {
 		try {
+			console.log("Handling errors for:", cb);
 			return await cb();
 		} catch (e) {
 			console.error(e);

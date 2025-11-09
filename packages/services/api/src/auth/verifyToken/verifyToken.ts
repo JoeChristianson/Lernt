@@ -11,6 +11,7 @@ function verifyToken(token: string) {
 			id: string;
 			email: string;
 		};
+		console.log("!!! verifyToken res", res);
 		return res;
 	} catch (error) {
 		throw new Error("Invalid token");

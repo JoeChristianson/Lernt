@@ -3,9 +3,12 @@
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"files": ["dist"],
+	"main": "src/index.ts",
+	"exports": {
+		"./styles/globals.css": "./src/styles/globals.css",
+		"./globals.css": "./src/styles/globals.css",
+		".": "./src/index.ts"
+	},
 	"scripts": {
 		"build": "tsc -p tsconfig.json",
 		"dev": "tsc -w -p tsconfig.json",
@@ -14,21 +17,36 @@
 		"test": "vitest"
 	},
 	"dependencies": {
+		"@radix-ui/react-accordion": "^1.2.12",
+		"@radix-ui/react-avatar": "^1.1.10",
+		"@radix-ui/react-dialog": "^1.1.15",
+		"@radix-ui/react-dropdown-menu": "^2.1.16",
+		"@radix-ui/react-label": "^2.1.7",
+		"@radix-ui/react-popover": "^1.1.15",
+		"@radix-ui/react-scroll-area": "^1.2.10",
+		"@radix-ui/react-slot": "^1.2.3",
+		"@radix-ui/react-tabs": "^1.1.13",
+		"@radix-ui/react-toast": "^1.2.15",
+		"@radix-ui/react-tooltip": "^1.2.8",
 		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"framer-motion": "^12.23.24",
+		"lucide-react": "^0.548.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-hook-form": "^7.56.0"
+		"react-hook-form": "^7.56.0",
+		"tailwind-merge": "^3.3.1"
 	},
 	"devDependencies": {
+		"@lernt/tailwind-config": "workspace:^",
+		"@lernt/ts-config": "workspace:^",
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.1",
-		"typescript": "^5.6.0",
-		"vitest": "^1.6.0",
-		"tailwindcss": "^3.4.0",
 		"autoprefixer": "^10.4.0",
 		"postcss": "^8.4.0",
-		"@lernt/tailwind-config": "workspace:^",
-		"@lernt/ts-config": "workspace:^"
+		"tailwindcss": "^3.4.0",
+		"typescript": "^5.6.0",
+		"vitest": "^1.6.0"
 	},
 	"peerDependencies": {
 		"react": ">=18",

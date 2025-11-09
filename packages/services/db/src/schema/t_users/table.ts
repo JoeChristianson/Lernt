@@ -1,5 +1,7 @@
 import { mysqlTable, timestamp, varchar } from "drizzle-orm/mysql-core";
 
+// TODO: Add constraint so that email is unique
+
 export const users = mysqlTable("t_users", {
 	id: varchar("id", { length: 255 }).primaryKey(),
 	email: varchar("email", { length: 100 }).notNull(),

@@ -3,6 +3,9 @@ import type React from "react";
 import { type FieldValues, FormProvider, type UseFormReturn } from "react-hook-form";
 import { Typography } from "../../atoms";
 
+// reexport UseFormReturn to ensure consistent versions of react-hook-form
+export type { UseFormReturn };
+
 const RootError = ({ errorMessage }: { errorMessage: string }) => {
 	return (
 		<Typography variant="body2" className="mt-4 text-red-600">

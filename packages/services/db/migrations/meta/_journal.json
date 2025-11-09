@@ -8,6 +8,13 @@
       "when": 1761097864239,
       "tag": "0000_deep_edwin_jarvis",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1762314942367,
+      "tag": "0001_daily_nuke",
+      "breakpoints": true
     }
   ]
 }

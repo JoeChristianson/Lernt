@@ -1,6 +1,6 @@
 
+import { eq } from "@lernt/db";
 import type { UserConfig } from "@lernt/domain";
-import { eq } from "drizzle-orm";
 import type { ServiceDeps } from "../../Service";
 
 

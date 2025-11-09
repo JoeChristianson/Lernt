@@ -1,10 +1,11 @@
 import type { ServiceDepsSessioned, ServiceDepsUnsessioned } from "@lernt/application/src/Service";
+import { authOptions } from "@lernt/auth";
 import { db, schema } from "@lernt/db";
 import type { UserModel } from "@lernt/domain";
 import { TRPCError, initTRPC } from "@trpc/server";
+import { getServerSession } from "next-auth/next";
 import { cookies } from "next/headers";
-import { verifyToken } from "./auth/index";
-
+import type { DeferredAnyFix } from "../../../utilities/src";
 type TRPCContextSessioned = Omit<ServiceDepsSessioned, "tx"> & {
   user: Pick<UserModel.Type, "id" | "email"> | null;
   cookies: ReturnType<typeof cookies>;
@@ -27,19 +28,8 @@ export type TRPCContext = TRPCContextSessioned | TRPCContextUnsessioned;
 export const createTRPCContext = async (opts: { req: Request }): Promise<TRPCContext> => {
   const cookieStore = cookies();
 
-  const token = cookieStore.get("token")?.value;
-
-  let user: Pick<UserModel.Type, "id" | "email"> | null = null;
-
-  // Verify token if it exists
-  if (token) {
-    try {
-      user = verifyToken(token);
-    } catch (error) {
-      // Invalid token - user remains null
-      console.error("Token verification failed:", error);
-    }
-  }
+  const session = await getServerSession(authOptions as unknown as DeferredAnyFix);
+  const user = (session as DeferredAnyFix)?.user as Pick<UserModel.Type, "id" | "email"> | null;
   if (!user) {
     return {
       _tag: "unsessioned",
@@ -67,6 +57,7 @@ const t = initTRPC.context<Context>().create();
 
 // Auth middleware
 export const isAuthed = t.middleware(({ ctx, next }) => {
+  console.log("!!! ctx", ctx.user);
   if (!ctx.user) {
     throw new TRPCError({
       code: "UNAUTHORIZED",
