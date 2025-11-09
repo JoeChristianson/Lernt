@@ -1,4 +1,4 @@
-import { Credentials } from "../../model";
+import { Credentials } from "../../domain-models";
 
 namespace AuthInterface {
 	export const LoginSchema = Credentials.pick({

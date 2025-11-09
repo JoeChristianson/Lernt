@@ -1,2 +1,3 @@
+export * from "./domain-models";
 export * from "./interfaces";
-export * from "./model";
+

@@ -1,6 +1,7 @@
 import type { db } from "@lernt/db";
 import type * as schema from "@lernt/db/src/schema/index.js";
 import type { Session, UserConfig } from "@lernt/domain/src";
+import { assertTruthy } from "@lernt/utilities";
 
 export type Transaction = Parameters<Parameters<typeof db.transaction>[0]>[0];
 export type Schema = typeof schema;
@@ -20,3 +21,14 @@ export type ServiceDepsUnsessioned = {
 };
 
 export type ServiceDeps = ServiceDepsSessioned | ServiceDepsUnsessioned;
+
+export const requireAuthed = (ctx: ServiceDeps): ServiceDepsSessioned & {
+  user: NonNullable<ServiceDepsSessioned["user"]>;
+} => {
+  if (ctx._tag === "unsessioned") {
+    throw new Error("User Not Authenticated");
+  }
+  const { user } = ctx;
+  assertTruthy(user, "User in Ctx");
+  return { ...ctx, user };
+}

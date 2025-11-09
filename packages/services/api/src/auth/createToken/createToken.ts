@@ -1,4 +1,4 @@
-import type { UserModel } from "@lernt/domain/src/model/User";
+import type { UserModel } from "@lernt/domain";
 import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env?.JWT_SECRET;
