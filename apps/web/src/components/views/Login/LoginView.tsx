@@ -10,6 +10,7 @@ import {
 	TextField,
 	Typography,
 } from "@lernt/ui";
+import { signIn } from "next-auth/react";
 import { useLoginContext } from "./LoginProvider";
 
 const LoginView = () => {
@@ -58,6 +59,7 @@ const LoginView = () => {
 							variant="light-filled"
 							className="w-full flex items-center justify-center p-2"
 							type="button"
+							onClick={() => signIn("google", { callbackUrl: "/" })}
 						>
 							<Icon name="google" />
 							Google
@@ -66,6 +68,7 @@ const LoginView = () => {
 							variant="light-filled"
 							className="w-full flex items-center justify-center p-2"
 							type="button"
+							onClick={() => signIn("github", { callbackUrl: "/" })}
 						>
 							<Icon name="github" />
 							GitHub

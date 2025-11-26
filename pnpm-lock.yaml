@@ -27,6 +27,88 @@ importers:
         specifier: ^5.6.0
         version: 5.9.2
 
+  apps/ded:
+    dependencies:
+      '@lernt/api':
+        specifier: workspace:^
+        version: link:../../packages/services/api
+      '@lernt/auth':
+        specifier: workspace:^
+        version: link:../../packages/services/auth
+      '@lernt/domain':
+        specifier: workspace:^
+        version: link:../../packages/domain
+      '@lernt/next-lib':
+        specifier: workspace:^
+        version: link:../../packages/libs/next-lib
+      '@lernt/ui':
+        specifier: workspace:^
+        version: link:../../packages/ui
+      '@lernt/utilities':
+        specifier: workspace:^
+        version: link:../../packages/utilities
+      '@tailwindcss/typography':
+        specifier: ^0.5.19
+        version: 0.5.19(tailwindcss@3.4.17)
+      '@tanstack/react-query':
+        specifier: ^5.90.7
+        version: 5.90.7(react@18.3.1)
+      '@trpc/server':
+        specifier: ^11.0.0
+        version: 11.6.0(typescript@5.9.2)
+      next:
+        specifier: ^14.2.0
+        version: 14.2.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next-auth:
+        specifier: ^4.24.11
+        version: 4.24.11(@auth/core@0.40.0)(next@14.2.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ^7.56.0
+        version: 7.63.0(react@18.3.1)
+      react-toastify:
+        specifier: ^11.0.5
+        version: 11.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      zod:
+        specifier: ^3.23.8
+        version: 3.25.76
+      zustand:
+        specifier: ^5.0.8
+        version: 5.0.8(@types/react@18.3.23)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
+    devDependencies:
+      '@lernt/tailwind-config':
+        specifier: workspace:^
+        version: link:../../packages/tailwind-config
+      '@lernt/ts-config':
+        specifier: workspace:^
+        version: link:../../packages/ts-config
+      '@types/node':
+        specifier: ^20.19.11
+        version: 20.19.11
+      '@types/react':
+        specifier: ^18.3.23
+        version: 18.3.23
+      autoprefixer:
+        specifier: ^10.4.0
+        version: 10.4.21(postcss@8.5.6)
+      dotenv-cli:
+        specifier: ^10.0.0
+        version: 10.0.0
+      postcss:
+        specifier: ^8.4.0
+        version: 8.5.6
+      tailwindcss:
+        specifier: ^3.4.0
+        version: 3.4.17
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.2
+
   apps/web:
     dependencies:
       '@lernt/api':
@@ -4120,6 +4202,24 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
+  zustand@5.0.8:
+    resolution: {integrity: sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
+
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
@@ -7715,3 +7815,9 @@ snapshots:
   yocto-queue@1.2.1: {}
 
   zod@3.25.76: {}
+
+  zustand@5.0.8(@types/react@18.3.23)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1)):
+    optionalDependencies:
+      '@types/react': 18.3.23
+      react: 18.3.1
+      use-sync-external-store: 1.6.0(react@18.3.1)
