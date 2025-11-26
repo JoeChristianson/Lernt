@@ -1,0 +1,22 @@
+{
+	"extends": "@lernt/ts-config/next-app",
+	"compilerOptions": {
+		"paths": {
+			"@/*": ["./src/*"],
+			"@lernt/domain/*": ["../../packages/domain/*"],
+			"@lernt/application/*": ["../../packages/application/*"],
+			"@lernt/services/*": ["../../packages/services/*"],
+			"@lernt/ui/*": ["../../packages/ui/src/*"],
+			"@lernt/utilities/*": ["../../packages/utilities/*"]
+		},
+		"allowJs": true,
+		"incremental": true,
+		"jsx": "preserve",
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
+	},
+	"include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts", "../../packages/libs/next-lib/src/components/Link.tsx"]
+}

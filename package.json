@@ -1,5 +1,5 @@
 {
-	"name": "lernt",
+	"name": "ded",
 	"packageManager": "pnpm@9.0.0",
 	"private": true,
 	"workspaces": [
@@ -9,6 +9,7 @@
 	"scripts": {
 		"dev": "turbo run dev --parallel",
 		"dev:web": "pnpm --filter @lernt/web dev",
+		"dev:ded": "pnpm --filter @lernt/ded dev",
 		"build": "turbo run build",
 		"type-check": "turbo run type-check",
 		"test": "turbo run test",

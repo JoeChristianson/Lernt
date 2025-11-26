@@ -8,5 +8,5 @@ export const users = mysqlTable("t_users", {
 	emailVerified: timestamp("email_verified"),
 	name: varchar("name", { length: 100 }).notNull(),
 	image: varchar("image", { length: 100 }),
-	password: varchar("password", { length: 1000 }).notNull(),
+	password: varchar("password", { length: 1000 }), // Nullable for OAuth users
 });

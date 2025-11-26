@@ -14,6 +14,11 @@ export const loginM = async (deps: ServiceDeps, payload: UserDTO.LoginPayload): 
         throw new Error("User not found");
     }
 
+    // OAuth users don't have passwords - they must sign in via OAuth provider
+    if (!user.password) {
+        throw new Error("This account uses OAuth authentication. Please sign in with Google or GitHub.");
+    }
+
     const isPasswordValid = bcrypt.compareSync(payload.password, user.password);
     if (!isPasswordValid) {
         throw new Error("Invalid password");

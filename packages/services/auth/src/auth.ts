@@ -9,8 +9,14 @@ import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 
 export const authOptions: AuthOptions = {
-	adapter: DrizzleAdapter(db),
+	adapter: DrizzleAdapter(db, {
+		usersTable: schema.users,
+		accountsTable: schema.accounts,
+	}) as any,
 	session: { strategy: "jwt" },
+	pages: {
+		signIn: "/auth/login",
+	},
 	secret: env.NEXTAUTH_SECRET,
 	providers: [
 		Google({
